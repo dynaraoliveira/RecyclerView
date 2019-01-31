@@ -27,7 +27,9 @@ class ListaActivity : AppCompatActivity() {
     }
 
     private fun exibeNaLista(pokemons: List<Pokemon>) {
-        rvPokemons.adapter = ListaPokemonAdapter(this, pokemons)
+        rvPokemons.adapter = ListaPokemonAdapter(this, pokemons, {
+            Toast.makeText(this, it.name, Toast.LENGTH_LONG).show()
+        })
         rvPokemons.layoutManager = LinearLayoutManager(this)
     }
 
